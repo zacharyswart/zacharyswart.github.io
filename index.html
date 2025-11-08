@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zachary Swart's Portfolio</title>
+  <meta name="description" content="Portfolio of Zachary Swart — Excel, Power BI, SQL, and Python projects, experience, education, mission, and contact." />
+  <meta property="og:title" content="Zachary Swart — Portfolio" />
+  <meta property="og:description" content="Excel, Power BI, SQL, and Python projects with a focus on building useful tools and dashboards." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/profile.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Tailwind via CDN (no build tools needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Minimal Tailwind config (optional tweaks)
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "Noto Sans", "Apple Color Emoji", "Noto Color Emoji", "sans-serif"],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Make all viewable images fill their containers and stay visible */
+    img[data-viewable] { display:block; width:100%; height:100%; object-fit:cover; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 rounded bg-black px-3 py-2 text-white">Skip to content</a>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <a href="#home" class="font-bold tracking-tight">Zachary Swart</a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+        <a class="hover:opacity-80" href="#home">Home</a>
+        <a class="hover:opacity-80" href="#about">About</a>
+        <a class="hover:opacity-80" href="#education">Education</a>
+        <a class="hover:opacity-80" href="#projects">Projects</a>
+        <a class="hover:opacity-80" href="#experience">Experience</a>
+        <a class="hover:opacity-80" href="#mission">Mission</a>
+        <a class="hover:opacity-80" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menuToggle" class="md:hidden rounded-full border px-3 py-1 text-sm" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">Menu</button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav id="mobileNav" class="md:hidden hidden border-t" aria-label="Mobile">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a class="rounded-lg border px-3 py-2" href="#home">Home</a>
+        <a class="rounded-lg border px-3 py-2" href="#about">About</a>
+        <a class="rounded-lg border px-3 py-2" href="#education">Education</a>
+        <a class="rounded-lg border px-3 py-2" href="#projects">Projects</a>
+        <a class="rounded-lg border px-3 py-2" href="#experience">Experience</a>
+        <a class="rounded-lg border px-3 py-2" href="#mission">Mission</a>
+        <a class="rounded-lg border px-3 py-2 col-span-2" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="relative isolate overflow-hidden">
+<!-- HERO -->
+    <section id="home" class="relative isolate overflow-hidden text-white">
+    <!-- Stable background layer with pinned hex colors -->
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,_#00332e,_#005f56,_#0f766e)]"></div>
+
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col-reverse items-center gap-10 py-12 sm:py-16 md:flex-row md:gap-16">
+        <div class="w-full md:w-3/5">
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Hi, I’m Zachary!</h1>
+            <p class="mt-4 text-lg leading-relaxed text-white/80">
+            I believe good people guided by true principles can change the world. My goal is to live with purpose. To grow, serve, and inspire others to do the same. Every project, challenge, and conversation is a chance to build trust, create value, and make life a little better for someone else.
+            </p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="rounded-xl border border-white/30 px-4 py-2 font-medium shadow-sm hover:bg-white/10">View Projects</a>
+            <a href="/assets/Zachary_Swart_Resume.pdf" download class="rounded-xl border border-white/30 px-4 py-2 font-medium shadow-sm hover:bg-white/10">Download Resume</a>
+            </div>
+
+            <div class="mt-6 flex items-center gap-2 text-sm" aria-label="Skills">
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">Excel</span>
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">Power BI</span>
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">SQL</span>
+            <span class="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">Python</span>
+            </div>
+        </div>
+
+        <div class="w-full md:w-2/5">
+            <div class="mx-auto aspect-square max-w-xs overflow-hidden rounded-2xl border border-white/20 shadow-lg shadow-black/20">
+            <img data-viewable src="/images/profile.jpg" alt="Portrait of Zachary Swart" class="cursor-zoom-in" width="640" height="640" loading="eager" decoding="async" />
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">About Me</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">My Story</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-none space-y-4">
+          <p>
+            Growing up in California in a loving family taught me about the importance of working hard, serving others, and keeping my word. That’s a big reason I love building tools that make people’s lives easier. Less manual work and more time for what really matters.
+          </p>
+          <p>
+            Any chance I get, I love to spend time going on new adventures and making the most out of my experiences. If there's something new, I love to explore it!
+          </p>
+          <p>
+            That's why technology quickly became a part of my life. It offered so many new paths to discover, and it's led to many fun and exciting projects. I always look forward to the next thing technology can offer.
+          </p>
+        </div>
+        <div class="overflow-hidden rounded-2xl border shadow-sm">
+          <img data-viewable src="/images/family/main.jpg" alt="My family in California" class="cursor-zoom-in" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Education</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Brigham Young University - Idaho</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="overflow-hidden rounded-2xl border shadow-sm">
+          <img data-viewable src="/images/education/byui.jpg" alt="BYU‑Idaho Campus" class="cursor-zoom-in" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">B.S. in Business and Data Analyitics</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-1">
+            <li>Coursework: SQL, Excel modeling, Power BI, Python basics</li>
+            <li>Projects: KPI dashboards, ETL scripts, automation tools</li>
+            <li>Clubs & service: mentoring peers, resume/interview assistance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Projects</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Analyst Work</h2>
+      </div>
+
+      <!-- Excel Project -->
+      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-lg sm:text-xl font-semibold">Excel Investment Project</h3>
+        </div>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <button class="group w-full" data-fullsrc="/images/projects/excel/main.jpg" aria-label="Open Excel main dashboard image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/main.jpg" alt="Excel — Main dashboard" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/excel/page-1.jpg" aria-label="Open Excel analysis page 1 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/page-1.jpg" alt="Excel — Analysis page 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/excel/page-2.jpg" aria-label="Open Excel analysis page 2 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/page-2.jpg" alt="Excel — Analysis page 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+        </div>
+      </article>
+
+      <!-- Power BI Project -->
+      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-lg sm:text-xl font-semibold">Power BI Business Analysis Project</h3>
+        </div>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/main.jpg" aria-label="Open Power BI home page image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/main.jpg" alt="Power BI — Home page" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-1.jpg" aria-label="Open Power BI analysis 1 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-1.jpg" alt="Power BI — Analysis 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-2.jpg" aria-label="Open Power BI analysis 2 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-2.jpg" alt="Power BI — Analysis 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-3.jpg" aria-label="Open Power BI analysis 3 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-3.jpg" alt="Power BI — Analysis 3" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-4.jpg" aria-label="Open Power BI analysis 4 image">
+            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-4.jpg" alt="Power BI — Analysis 4" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+          </button>
+        </div>
+      </article>
+
+      <!-- Python Project (coming soon) -->
+      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-lg sm:text-xl font-semibold">Python Project</h3>
+          <span class="text-sm opacity-70">Coming soon</span>
+        </div>
+        <div class="mt-4 rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+          Placeholder — screenshots and description will appear here.
+        </div>
+      </article>
+
+      <!-- SQL Project (coming soon) -->
+      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-lg sm:text-xl font-semibold">SQL Project</h3>
+          <span class="text-sm opacity-70">Coming soon</span>
+        </div>
+        <div class="mt-4 rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+          Placeholder — screenshots and description will appear here.
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Experience</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Work History</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div class="space-y-4">
+          <div class="rounded-2xl border p-5 shadow-sm">
+            <h3 class="text-lg font-semibold">Student Mentor — Career Center</h3>
+            <p class="opacity-80 text-sm">Advised students on resumes, interviews, and job search strategies.</p>
+          </div>
+          <div class="rounded-2xl border p-5 shadow-sm">
+            <h3 class="text-lg font-semibold">Teaching Assistant — BYU‑Idaho</h3>
+            <p class="opacity-80 text-sm">Graded and taught Structured Query Language (SQL) and execution.</p>
+          </div>
+          <div class="rounded-2xl border p-5 shadow-sm">
+            <h3 class="text-lg font-semibold">Intern — Polaris</h3>
+            <p class="opacity-80 text-sm">Learned and implemented Lean Six Sigma principles in manufactoring.</p>
+          </div>
+          <div class="rounded-2xl border p-5 shadow-sm">
+            <h3 class="text-lg font-semibold">Installer — AirStream Mechanical, Inc.</h3>
+            <p class="opacity-80 text-sm">Installed HVAC systems all over Southern California.</p>
+          </div>
+          <div class="rounded-2xl border p-5 shadow-sm">
+            <h3 class="text-lg font-semibold">Fabricator — Specialized Dairy Service</h3>
+            <p class="opacity-80 text-sm">Built and designed automation products for various kinds of machinary.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-2xl border p-4 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
+            <div class="mb-3 flex items-center justify-between">
+              <h4 class="font-semibold">Resume</h4>
+              <div class="flex gap-2">
+                <a href="/assets/Zachary_Swart_Resume.pdf" download class="rounded-lg border px-3 py-1 text-sm">PDF</a>
+                <a href="/assets/Zachary_Swart_Resume.docx" download class="rounded-lg border px-3 py-1 text-sm">DOCX</a>
+              </div>
+            </div>
+            <div class="overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/resume/preview.jpg" alt="Resume preview" class="cursor-zoom-in" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section id="mission" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Mission Experience</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Colorado Springs, CO</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div class="lg:col-span-1">
+          <div class="overflow-hidden rounded-2xl border shadow-sm">
+            <img data-viewable src="/images/mission/main.jpg" alt="Mission main" class="cursor-zoom-in" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <button class="group w-full" data-fullsrc="/images/mission/1.jpg" aria-label="Open mission photo 1">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/1.jpg" alt="Mission 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/2.jpg" aria-label="Open mission photo 2">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/2.jpg" alt="Mission 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/3.jpg" aria-label="Open mission photo 3">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/3.jpg" alt="Mission 3" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/4.jpg" aria-label="Open mission photo 4">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/4.jpg" alt="Mission 4" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/5.jpg" aria-label="Open mission photo 5">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/5.jpg" alt="Mission 5" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/6.jpg" aria-label="Open mission photo 6">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/6.jpg" alt="Mission 6" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/7.jpg" aria-label="Open mission photo 7">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/7.jpg" alt="Mission 7" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/8.jpg" aria-label="Open mission photo 8">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/8.jpg" alt="Mission 8" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+            <button class="group w-full" data-fullsrc="/images/mission/9.jpg" aria-label="Open mission photo 9">
+              <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/mission/9.jpg" alt="Mission 9" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Contact</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Let’s Connect</h2>
+      </div>
+      <div class="rounded-2xl border p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          <div class="md:col-span-2">
+            <p class="opacity-90">
+              Connect with me on LinkedIn or send me an email. I’m open to internship and full‑time opportunities.
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <a href="https://www.linkedin.com/in/zacharyswart" target="_blank" rel="noopener noreferrer" class="rounded-xl border px-4 py-2 font-medium shadow-sm">LinkedIn</a>
+              <a href="mailto:swa21007@byui.edu" class="rounded-xl border px-4 py-2 font-medium shadow-sm">Email me</a>
+            </div>
+          </div>
+          <div class="justify-self-center">
+            <div class="rounded-2xl border px-4 py-3 text-center text-sm">
+              <div class="font-semibold">Available for hire</div>
+              <div class="opacity-70">Part‑time • Full‑time • Remote</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-sm">
+      <span>© <span id="year"></span> Zachary Swart</span>
+      <a href="#home" class="hover:opacity-80">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4" role="dialog" aria-modal="true" aria-labelledby="lightboxLabel">
+    <p id="lightboxLabel" class="sr-only">Image preview</p>
+    <img id="lightboxImage" src="" alt="Preview" class="max-h-[85vh] max-w-[90vw] rounded-xl shadow-xl" />
+    <button id="lightboxClose" class="absolute top-4 right-4 rounded-full border bg-white/90 px-3 py-1 text-sm">Close</button>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      menuToggle.setAttribute('aria-label', !isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    // Simple lightbox with a11y
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(src) {
+      lightboxImage.src = src;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      lightboxClose.focus();
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-fullsrc]');
+      if (btn) {
+        const full = btn.getAttribute('data-fullsrc');
+        if (full) openLightbox(full);
+      }
+      // Any standalone image can open in the lightbox
+      const img = e.target.closest('img[data-viewable]');
+      if (img && !lightbox.contains(img)) {
+        openLightbox(img.currentSrc || img.src);
+      }
+      if (e.target === lightbox || e.target === lightboxClose) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

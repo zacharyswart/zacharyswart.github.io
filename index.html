@@ -26,13 +26,33 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
-    /* Make all viewable images fill their containers and stay visible */
-    img[data-viewable] { display:block; width:100%; height:100%; object-fit:cover; }
+    html { scroll-behavior: smooth; 
+           scroll-padding-top: 4rem;
+    }
+
+    /* Make all viewable images fill their containers and smoothly zoom on hover */
+    img[data-viewable] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+    will-change: transform;
+    cursor: zoom-in;
+    }
+
+    /* Enable zoom for any wrapper with overflow-hidden */
+    @media (hover:hover) {
+      .overflow-hidden:hover > img[data-viewable] {
+        transform: scale(1.05);
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
   </style>
+
 </head>
 <body class="min-h-screen bg-white text-gray-900">
   <!-- Skip link for accessibility -->
@@ -142,7 +162,7 @@
           <img data-viewable src="/images/education/byui.jpg" alt="BYU‑Idaho Campus" class="cursor-zoom-in" loading="lazy" decoding="async" />
         </div>
         <div>
-          <h3 class="text-xl font-semibold">B.S. in Business and Data Analyitics</h3>
+          <h3 class="text-xl font-semibold">B.S. in Business and Data Analytics</h3>
           <ul class="mt-3 list-disc pl-5 space-y-1">
             <li>Coursework: SQL, Excel modeling, Power BI, Python basics</li>
             <li>Projects: KPI dashboards, ETL scripts, automation tools</li>
@@ -162,22 +182,25 @@
       <!-- Excel Project -->
       <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
         <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Excel Investment Project</h3>
+          <h3 class="text-lg sm:text-xl font-semibold">Microsoft Excel</h3>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <button class="group w-full" data-fullsrc="/images/projects/excel/main.jpg" aria-label="Open Excel main dashboard image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/excel/main.jpg" alt="Excel — Main dashboard" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/excel/page-1.jpg" aria-label="Open Excel analysis page 1 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/excel/page-1.jpg" alt="Excel — Analysis page 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/excel/page-2.jpg" aria-label="Open Excel analysis page 2 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/excel/page-2.jpg" alt="Excel — Analysis page 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
             </div>
           </button>
         </div>
@@ -186,32 +209,37 @@
       <!-- Power BI Project -->
       <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
         <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Power BI Business Analysis Project</h3>
+          <h3 class="text-lg sm:text-xl font-semibold">Microsoft Power BI</h3>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <button class="group w-full" data-fullsrc="/images/projects/powerbi/main.jpg" aria-label="Open Power BI home page image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/powerbi/main.jpg" alt="Power BI — Home page" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-1.jpg" aria-label="Open Power BI analysis 1 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/powerbi/page-1.jpg" alt="Power BI — Analysis 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-2.jpg" aria-label="Open Power BI analysis 2 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/powerbi/page-2.jpg" alt="Power BI — Analysis 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-3.jpg" aria-label="Open Power BI analysis 3 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/powerbi/page-3.jpg" alt="Power BI — Analysis 3" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
             </div>
           </button>
           <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-4.jpg" aria-label="Open Power BI analysis 4 image">
-            <div class="aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
+            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
               <img data-viewable src="/images/projects/powerbi/page-4.jpg" alt="Power BI — Analysis 4" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
             </div>
           </button>
         </div>
@@ -223,7 +251,10 @@
           <h3 class="text-lg sm:text-xl font-semibold">Python Project</h3>
           <span class="text-sm opacity-70">Coming soon</span>
         </div>
-        <div class="mt-4 rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+        <div class="mt-4 relative rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+          <span class="absolute top-2 left-2 rounded bg-blue-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">
+            Python
+          </span>
           Placeholder — screenshots and description will appear here.
         </div>
       </article>
@@ -234,7 +265,10 @@
           <h3 class="text-lg sm:text-xl font-semibold">SQL Project</h3>
           <span class="text-sm opacity-70">Coming soon</span>
         </div>
-        <div class="mt-4 rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+        <div class="mt-4 relative rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
+          <span class="absolute top-2 left-2 rounded bg-indigo-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">
+            SQL
+          </span>
           Placeholder — screenshots and description will appear here.
         </div>
       </article>
@@ -253,12 +287,12 @@
             <p class="opacity-80 text-sm">Advised students on resumes, interviews, and job search strategies.</p>
           </div>
           <div class="rounded-2xl border p-5 shadow-sm">
-            <h3 class="text-lg font-semibold">Teaching Assistant — BYU‑Idaho</h3>
+            <h3 class="text-lg font-semibold">Teaching Assistant — BYU-Idaho</h3>
             <p class="opacity-80 text-sm">Graded and taught Structured Query Language (SQL) and execution.</p>
           </div>
           <div class="rounded-2xl border p-5 shadow-sm">
             <h3 class="text-lg font-semibold">Intern — Polaris</h3>
-            <p class="opacity-80 text-sm">Learned and implemented Lean Six Sigma principles in manufactoring.</p>
+            <p class="opacity-80 text-sm">Learned and implemented Lean Six Sigma principles in manufacturing.</p>
           </div>
           <div class="rounded-2xl border p-5 shadow-sm">
             <h3 class="text-lg font-semibold">Installer — AirStream Mechanical, Inc.</h3>
@@ -266,16 +300,25 @@
           </div>
           <div class="rounded-2xl border p-5 shadow-sm">
             <h3 class="text-lg font-semibold">Fabricator — Specialized Dairy Service</h3>
-            <p class="opacity-80 text-sm">Built and designed automation products for various kinds of machinary.</p>
+            <p class="opacity-80 text-sm">Built and designed automation products for various kinds of machinery.</p>
           </div>
         </div>
+
         <div class="space-y-4">
           <div class="rounded-2xl border p-4 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
             <div class="mb-3 flex items-center justify-between">
               <h4 class="font-semibold">Resume</h4>
-              <div class="flex gap-2">
-                <a href="/assets/Zachary_Swart_Resume.pdf" download class="rounded-lg border px-3 py-1 text-sm">PDF</a>
-                <a href="/assets/Zachary_Swart_Resume.docx" download class="rounded-lg border px-3 py-1 text-sm">DOCX</a>
+              <div class="flex items-center gap-2">
+                <a href="/assets/Zachary_Swart_Resume.pdf" download
+                  class="inline-flex items-center gap-1.5 rounded-lg border border-red-600 text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1 text-sm font-medium transition">
+                  <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4"><path d="M10 2v8m0 0l3-3m-3 3L7 7M4 14h12v2H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  PDF
+                </a>
+                <a href="/assets/Zachary_Swart_Resume.docx" download
+                  class="inline-flex items-center gap-1.5 rounded-lg border border-blue-600 text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1 text-sm font-medium transition">
+                  <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4"><path d="M10 2v8m0 0l3-3m-3 3L7 7M4 14h12v2H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  DOCX
+                </a>
               </div>
             </div>
             <div class="overflow-hidden rounded-xl border shadow-sm">
@@ -393,21 +436,39 @@
     <button id="lightboxClose" class="absolute top-4 right-4 rounded-full border bg-white/90 px-3 py-1 text-sm">Close</button>
   </div>
 
-  <script>
+    <script>
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu
+    // MOBILE NAV (single merged handler + scroll lock + close-on-link)
     const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileNav  = document.getElementById('mobileNav');
+
+    function setScrollLock(lock) { document.body.style.overflow = lock ? 'hidden' : ''; }
+
     menuToggle?.addEventListener('click', () => {
-      const isOpen = !mobileNav.classList.contains('hidden');
+      const willOpen = mobileNav.classList.contains('hidden'); // state BEFORE toggle
       mobileNav.classList.toggle('hidden');
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      menuToggle.setAttribute('aria-label', !isOpen ? 'Close menu' : 'Open menu');
+
+      // aria state after toggle
+      menuToggle.setAttribute('aria-expanded', String(willOpen));
+      menuToggle.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
+
+      // lock body scroll only when opening
+      setScrollLock(willOpen);
     });
 
-    // Simple lightbox with a11y
+    // Close mobile nav on link click
+    [...document.querySelectorAll('#mobileNav a')].forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+        setScrollLock(false);
+      });
+    });
+
+    // SIMPLE LIGHTBOX WITH A11Y
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -426,24 +487,26 @@
       document.body.style.overflow = '';
     }
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('button[data-fullsrc]');
       if (btn) {
         const full = btn.getAttribute('data-fullsrc');
         if (full) openLightbox(full);
+        return;
       }
       // Any standalone image can open in the lightbox
       const img = e.target.closest('img[data-viewable]');
       if (img && !lightbox.contains(img)) {
         openLightbox(img.currentSrc || img.src);
+        return;
       }
       if (e.target === lightbox || e.target === lightboxClose) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
         closeLightbox();
       }
     });

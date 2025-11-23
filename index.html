@@ -27,9 +27,10 @@
   </script>
   <style>
     html { scroll-behavior: smooth; scroll-padding-top: 4rem;}
-
-    :root{ --gutter: clamp(22px, 6vw, 40px); }
-    .gutter{ padding-left: max(var(--gutter), env(safe-area-inset-left)); padding-right: max(var(--gutter), env(safe-area-inset-right)); }
+    :root {--gutter: clamp(22px, 6vw, 40px);}
+    .gutter {padding-left: max(var(--gutter), env(safe-area-inset-left)); padding-right: max(var(--gutter), env(safe-area-inset-right));}
+    .project-filter {transition: all 0.2s ease;}
+    .project-filter.active {background: #111; color: white;}
 
     /* Make all viewable images fill their containers and smoothly zoom on hover */
     img[data-viewable] {
@@ -156,19 +157,98 @@
     <section id="education" class="mx-auto max-w-6xl gutter py-16">
       <div class="mb-8">
         <div class="text-sm font-medium tracking-widest uppercase opacity-70">Education</div>
-        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Brigham Young University - Idaho</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Brigham Young University–Idaho</h2>
       </div>
+
+      <!-- Main Layout -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+        <!-- Main Image -->
         <div class="overflow-hidden rounded-2xl border shadow-sm">
-          <img data-viewable src="/images/education/byui.jpg" alt="BYU‑Idaho Campus" class="cursor-zoom-in" loading="lazy" decoding="async" />
+          <img 
+            data-viewable 
+            src="/images/education/main.jpg" 
+            alt="BYU-Idaho Campus" 
+            class="cursor-zoom-in object-cover"
+            loading="lazy" 
+            decoding="async" 
+          />
         </div>
-        <div>
-          <h3 class="text-xl font-semibold">B.S. in Business and Data Analytics</h3>
-          <ul class="mt-3 list-disc pl-5 space-y-1">
-            <li>Coursework: SQL, Excel modeling, Power BI, Python basics</li>
-            <li>Projects: KPI dashboards, ETL scripts, automation tools</li>
-            <li>Clubs & service: mentoring peers, resume/interview assistance</li>
-          </ul>
+
+        <!-- Text Content -->
+        <div class="space-y-4">
+          <h3 class="text-2xl font-semibold">Major in Business Analytics</h3>
+
+          <p class="opacity-90 leading-relaxed">
+            My first semester at BYU-Idaho helped me discover how much I enjoy business, and
+            that interest grew into a passion for data analytics. I love finding meaningful
+            patterns, collaborating with others, and using data to make an impact.
+          </p>
+
+          <!-- Core Skills -->
+          <div>
+            <h4 class="text-lg font-semibold mt-4">Core Skills</h4>
+            <ul class="mt-2 list-disc pl-5 space-y-1 text-gray-700">
+              <li>Advanced Excel modeling & automation</li>
+              <li>SQL querying & database logic (Sakila, World, Real datasets)</li>
+              <li>Power BI dashboard design & business reporting</li>
+              <li>Python scripting for analysis & data processing</li>
+              <li>ETL fundamentals & data cleaning</li>
+              <li>Storytelling with data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campus Gallery -->
+      <div class="mt-12">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+          <!-- Auditorium -->
+          <div class="space-y-2">
+            <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+              <img 
+                data-viewable 
+                src="/images/education/1.jpg" 
+                alt="BYU-Idaho Auditorium" 
+                class="cursor-zoom-in object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy" 
+                decoding="async"
+              />
+            </div>
+            <p class="text-sm text-gray-600 text-center">Auditorium</p>
+          </div>
+
+          <!-- MC Courtyard -->
+          <div class="space-y-2">
+            <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+              <img 
+                data-viewable 
+                src="/images/education/2.jpg" 
+                alt="BYU-Idaho MC Courtyard" 
+                class="cursor-zoom-in object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy" 
+                decoding="async"
+              />
+            </div>
+            <p class="text-sm text-gray-600 text-center">MC Courtyard</p>
+          </div>
+
+          <!-- Temple Sunset View -->
+          <div class="space-y-2">
+            <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+              <img 
+                data-viewable 
+                src="/images/education/3.jpg" 
+                alt="Temple Sunset View" 
+                class="cursor-zoom-in object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy" 
+                decoding="async"
+              />
+            </div>
+            <p class="text-sm text-gray-600 text-center">Temple Sunset</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -178,101 +258,221 @@
       <div class="mb-8">
         <div class="text-sm font-medium tracking-widest uppercase opacity-70">Projects</div>
         <h2 class="text-3xl sm:text-4xl font-bold mt-2">Analyst Work</h2>
+        <p class="mt-2 max-w-2xl text-gray-600">
+          A collection of my projects showcasing my skills in automation, reporting,
+          analytics, and programing.
+        </p>
+        <!-- PROJECT FILTERS -->
+        <div class="mt-6 flex flex-wrap gap-3 text-sm font-medium">
+          <button class="project-filter active border px-3 py-1.5 rounded-lg shadow-sm" data-filter="all">
+            All
+          </button>
+          <button class="project-filter border px-3 py-1.5 rounded-lg shadow-sm" data-filter="excel">
+            Excel
+          </button>
+          <button class="project-filter border px-3 py-1.5 rounded-lg shadow-sm" data-filter="powerbi">
+            Power BI
+          </button>
+          <button class="project-filter border px-3 py-1.5 rounded-lg shadow-sm" data-filter="python">
+            Python
+          </button>
+          <button class="project-filter border px-3 py-1.5 rounded-lg shadow-sm" data-filter="sql">
+            SQL
+          </button>
+        </div>
       </div>
 
-      <!-- Excel Project -->
-      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
-        <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Microsoft Excel</h3>
+      <!-- EXCEL PROJECT #2 -->
+      <article data-category="excel" class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-10">
+
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg sm:text-xl font-semibold">Excel — Theater Survey Analysis</h3>
+          <span class="text-xs px-2 py-[3px] rounded bg-green-600/90 text-white font-medium shadow-sm">Excel</span>
         </div>
+
+        <!-- Description -->
+        <p class="mt-3 text-gray-700 text-sm leading-relaxed">
+          An Excel-based analysis summarizing survey responses from a university theater study. 
+          This dashboard organizes audience feedback, attendance patterns, marketing awareness, and 
+          customer experience metrics into clean visual summaries. It highlights key trends and 
+          provides actionable insights into what drives satisfaction and engagement.
+        </p>
+
+        <!-- Image Grid -->
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <button class="group w-full" data-fullsrc="/images/projects/excel/main.jpg" aria-label="Open Excel main dashboard image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/excel/main.jpg" alt="Excel — Main dashboard" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
+
+          <!-- Image 1 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-2/1.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-2/1.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Overall Ratings</span>
             </div>
           </button>
-          <button class="group w-full" data-fullsrc="/images/projects/excel/page-1.jpg" aria-label="Open Excel analysis page 1 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/excel/page-1.jpg" alt="Excel — Analysis page 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
+
+          <!-- Image 2 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-2/2.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-2/2.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Attendance Insights</span>
             </div>
           </button>
-          <button class="group w-full" data-fullsrc="/images/projects/excel/page-2.jpg" aria-label="Open Excel analysis page 2 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/excel/page-2.jpg" alt="Excel — Analysis page 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-green-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Investment Tracker</span>
+
+          <!-- Image 3 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-2/3.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-2/3.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Marketing Infomartion</span>
             </div>
           </button>
+
+          <!-- Image 4 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-2/4.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-2/4.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Customer Behavior</span>
+            </div>
+          </button>
+
+          <!-- Image 5 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-2/5.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-2/5.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Experience Metrics</span>
+            </div>
+          </button>
+
         </div>
       </article>
 
-      <!-- Power BI Project -->
-      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
-        <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Microsoft Power BI</h3>
+      <!-- EXCEL PROJECT #1 -->
+      <article data-category="excel" class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-10">
+
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg sm:text-xl font-semibold">Excel — Investment Tracker Dashboard</h3>
+          <span class="text-xs px-2 py-[3px] rounded bg-green-600/90 text-white font-medium shadow-sm">Excel</span>
         </div>
+
+        <!-- Description -->
+        <p class="mt-3 text-gray-700 text-sm leading-relaxed">
+          A multi-page Excel dashboard designed to track investments, automate calculations, and display
+          performance insights using charts, formulas, and structured tables.
+        </p>
+
+        <!-- Image Grid -->
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <button class="group w-full" data-fullsrc="/images/projects/powerbi/main.jpg" aria-label="Open Power BI home page image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/powerbi/main.jpg" alt="Power BI — Home page" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
+
+          <!-- Image 1 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-1/1.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-1/1.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Main Dashboard</span>
             </div>
           </button>
-          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-1.jpg" aria-label="Open Power BI analysis 1 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/powerbi/page-1.jpg" alt="Power BI — Analysis 1" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
+
+          <!-- Image 2 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-1/2.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-1/2.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Input Table</span>
             </div>
           </button>
-          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-2.jpg" aria-label="Open Power BI analysis 2 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/powerbi/page-2.jpg" alt="Power BI — Analysis 2" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
+
+          <!-- Image 3 -->
+          <button class="group w-full" data-fullsrc="/images/projects/excel/project-1/3.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/excel/project-1/3.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-green-600/90 text-white text-[11px] px-2 py-1 rounded shadow">Calculations Table</span>
             </div>
           </button>
-          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-3.jpg" aria-label="Open Power BI analysis 3 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/powerbi/page-3.jpg" alt="Power BI — Analysis 3" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
-            </div>
-          </button>
-          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-4.jpg" aria-label="Open Power BI analysis 4 image">
-            <div class="relative aspect-video w-full overflow-hidden rounded-xl border shadow-sm">
-              <img data-viewable src="/images/projects/powerbi/page-4.jpg" alt="Power BI — Analysis 4" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-              <span class="absolute top-2 left-2 rounded bg-amber-500/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">Business Report</span>
-            </div>
-          </button>
+
         </div>
       </article>
 
-      <!-- Python Project (coming soon) -->
-      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-6">
-        <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">Python Project</h3>
-          <span class="text-sm opacity-70">Coming soon</span>
+      <!-- POWER BI PROJECT -->
+      <article data-category="powerbi" class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-10">
+
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg sm:text-xl font-semibold">Power BI — Business Health Report</h3>
+          <span class="text-xs px-2 py-[3px] rounded bg-amber-500/90 text-white font-medium shadow-sm">Power BI</span>
         </div>
-        <div class="mt-4 relative rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
-          <span class="absolute top-2 left-2 rounded bg-blue-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">
-            Python
-          </span>
-          Placeholder — screenshots and description will appear here.
+
+        <p class="mt-3 text-gray-700 text-sm leading-relaxed">
+          An interactive Power BI report highlighting key performance trends, year-over-year changes,
+          and executive-level insights with clean visuals and slicers for dynamic filtering.
+        </p>
+
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/main.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/main.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-amber-500/90 text-white text-[11px] px-2 py-1 rounded shadow">Overview</span>
+            </div>
+          </button>
+
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-1.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-1.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-amber-500/90 text-white text-[11px] px-2 py-1 rounded shadow">Analysis</span>
+            </div>
+          </button>
+
+          <button class="group w-full" data-fullsrc="/images/projects/powerbi/page-2.jpg">
+            <div class="relative aspect-video overflow-hidden rounded-xl border shadow-sm">
+              <img data-viewable src="/images/projects/powerbi/page-2.jpg"
+                  class="object-cover cursor-zoom-in transition group-hover:scale-105">
+              <span class="absolute top-2 left-2 bg-amber-500/90 text-white text-[11px] px-2 py-1 rounded shadow">Trends</span>
+            </div>
+          </button>
+
         </div>
       </article>
 
-      <!-- SQL Project (coming soon) -->
-      <article class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
-        <div class="flex items-baseline justify-between gap-4">
-          <h3 class="text-lg sm:text-xl font-semibold">SQL Project</h3>
-          <span class="text-sm opacity-70">Coming soon</span>
+      <!-- PYTHON PROJECT -->
+      <article data-category="python" class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50 mb-10">
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg sm:text-xl font-semibold">Python Automation Tools</h3>
+          <span class="text-xs px-2 py-[3px] rounded bg-blue-600/90 text-white font-medium shadow-sm">Python</span>
         </div>
-        <div class="mt-4 relative rounded-xl border border-dashed p-8 text-center text-sm opacity-80">
-          <span class="absolute top-2 left-2 rounded bg-indigo-600/90 px-2 py-1 text-[11px] font-semibold tracking-wide text-white shadow">
-            SQL
-          </span>
-          Placeholder — screenshots and description will appear here.
+
+        <p class="mt-3 text-gray-700 text-sm leading-relaxed">
+          A set of Python scripts focused on data cleaning, automation, and personal analytics.  
+          (Screenshots and detailed write-ups coming soon.)
+        </p>
+
+        <div class="mt-4 p-6 rounded-xl border border-dashed text-center text-sm opacity-80">
+          Placeholder — visuals coming soon.
         </div>
       </article>
+
+      <!-- SQL PROJECT -->
+      <article data-category="sql" class="rounded-2xl border p-4 sm:p-6 shadow-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/50">
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg sm:text-xl font-semibold">SQL Analytics & Data Exploration</h3>
+          <span class="text-xs px-2 py-[3px] rounded bg-indigo-600/90 text-white font-medium shadow-sm">SQL</span>
+        </div>
+
+        <p class="mt-3 text-gray-700 text-sm leading-relaxed">
+          A portfolio of SQL logic using real-world datasets and sample schemas like Sakila and World.
+          Includes joins, subqueries, aggregations, CTEs, and business-focused query structures.
+          (Screenshots coming soon.)
+        </p>
+
+        <div class="mt-4 p-6 rounded-xl border border-dashed text-center text-sm opacity-80">
+          Placeholder — visuals coming soon.
+        </div>
+      </article>
+
     </section>
 
     <!-- EXPERIENCE -->
@@ -394,6 +594,94 @@
       </div>
     </section>
 
+    <!-- ZION TRIP -->
+    <section id="zion" class="mx-auto max-w-6xl gutter py-16">
+      <div class="mb-8">
+        <div class="text-sm font-medium tracking-widest uppercase opacity-70">Recent Adventures</div>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Zion National Park</h2>
+        <p class="mt-2 max-w-2xl text-gray-600">
+          A breathtaking trip full of views, hiking, and good memories. Here are some of my favorite shots.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <!-- Main Image -->
+        <div class="lg:col-span-1">
+          <div class="overflow-hidden rounded-2xl border shadow-sm">
+            <img 
+              data-viewable 
+              src="/images/zion/main.jpg" 
+              alt="Zion main" 
+              class="cursor-zoom-in object-cover object-bottom"
+              loading="lazy" 
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="lg:col-span-2">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+
+            <!-- Photo 1 -->
+            <button class="group w-full" data-fullsrc="/images/zion/1.jpg" aria-label="Open Zion photo 1">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/1.jpg" alt="Zion 1"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+            <!-- Photo 2 -->
+            <button class="group w-full" data-fullsrc="/images/zion/2.jpg" aria-label="Open Zion photo 2">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/2.jpg" alt="Zion 2"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+            <!-- Photo 3 -->
+            <button class="group w-full" data-fullsrc="/images/zion/3.jpg" aria-label="Open Zion photo 3">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/3.jpg" alt="Zion 3"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+            <!-- Photo 4 -->
+            <button class="group w-full" data-fullsrc="/images/zion/4.jpg" aria-label="Open Zion photo 4">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/4.jpg" alt="Zion 4"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+            <!-- Photo 5 -->
+            <button class="group w-full" data-fullsrc="/images/zion/5.jpg" aria-label="Open Zion photo 5">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/5.jpg" alt="Zion 5"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+            <!-- Photo 6 -->
+            <button class="group w-full" data-fullsrc="/images/zion/6.jpg" aria-label="Open Zion photo 6">
+              <div class="aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+                <img data-viewable src="/images/zion/6.jpg" alt="Zion 6"
+                  class="cursor-zoom-in object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" decoding="async" />
+              </div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="mx-auto max-w-6xl gutter py-16">
       <div class="mb-8">
@@ -510,6 +798,32 @@
       if (e.target === lightbox || e.target === lightboxClose) {
         closeLightbox();
       }
+    });
+
+    // PROJECT FILTERING
+    const filterButtons = document.querySelectorAll('.project-filter');
+    const projectCards = document.querySelectorAll('#projects article');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        // Active button visuals
+        filterButtons.forEach(b => b.classList.remove('active', 'bg-black', 'text-white'));
+        btn.classList.add('active', 'bg-black', 'text-white');
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          const category = card.dataset.category;
+
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+      });
     });
   </script>
 </body>
